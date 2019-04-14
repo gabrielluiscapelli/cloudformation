@@ -4,6 +4,9 @@ Resources:
     # http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
     Type: AWS::EC2::SecurityGroup
     Properties:
+      Tags:
+        - Key: Name
+          Value: Averquemasa
       GroupDescription: Enable SSH access via port 22
       SecurityGroupIngress:
         # we have a lot of rules because it's a perfect security group

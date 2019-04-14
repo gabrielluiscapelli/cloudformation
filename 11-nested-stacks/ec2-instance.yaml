@@ -37,7 +37,7 @@ Resources:
   SSHSecurityGroupStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/cloudformation-bucket-common-mycorp/ssh-security-group.yaml
+      TemplateURL: https://s3-eu-west-1.amazonaws.com/cloudformationgabriel/11-nested-stacks/nested/ssh-security-group.yaml
       Parameters:
         ApplicationName: !Ref AWS::StackName
         VPCId: !Ref VPCId
@@ -47,7 +47,7 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: t2.micro
+      InstanceType: t3.nano
       # Note we use the pseudo parameter AWS::Region
       ImageId: !FindInMap [AWSRegionArch2AMI, !Ref 'AWS::Region', HVM64]
       AvailabilityZone: !Sub ${AWS::Region}a
